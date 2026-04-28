@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>olx</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">olx<span>.</span></div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+          <span class="icon">🔍</span>
+          <span class="icon">👤</span>
+          <div class="cart-icon">
+            <span class="icon">🛒</span>
+            <span class="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Upgrade Your Style</h1>
+        <p>Upto 50% Off on New Summer Collection. Limited time offer!</p>
+        <button class="btn-primary">Shop Now</button>
+      </div>
+    </section>
+
+    <main class="container">
+      <h2 class="section-title">Trending Products</h2>
+      <div id="card-container" class="product-grid"></div>
+      <span class="see-btn-con">
+          <button id="see-more-btn" onclick="rendarcard()">See more</button>
+      </span>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>olx<span>.</span></h3>
+          <p>
+            Best quality products at unbeatable prices. Your satisfaction is our
+            priority.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <div class="newsletter">
+            <input type="email" placeholder="Your Email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 olx. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
