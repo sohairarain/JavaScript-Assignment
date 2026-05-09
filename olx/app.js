@@ -1,45 +1,53 @@
 let allproducts = [];
-let count = 0;
-let limit = 10;
+// let count = 0;
+// let limit = 10;
 getApi();
 
 async function getApi() {
   const response = await fetch("https://dummyjson.com/products");
   const { products } = await response.json();
   allproducts = products;
-  // console.log(allproducts);
-  rendarcard();
-  priceTocard()
+  rendarcard(allproducts);
 }
-function priceTocard(onClickData){
-
+function sortByPrice(element){
   
-  let setPriceArray =[]
-  for(let i = 0 ; i < allproducts.length ; i++){
+  let copyProducts = [...allproducts]
+  let containerProduct = document.getElementById("card-container");
 
-    let priceGet = allproducts[i].price
-     setPriceArray.push(priceGet)}
-  let finalPrice = setPriceArray.sort()   
+  switch (true) {
 
-  switch(true){
-    
-
-    case ( onClickData):
-      console.log(runing)
+    case (element == 'Ascending'):
+      // count = 0
+      copyProducts.sort((a,b) => a.price - b.price) 
+      containerProduct.innerHTML=''
+      console.log(copyProducts)
+      rendarcard(copyProducts)
       break;
 
-  }
+    case(element == 'descending'):
+      // count = 0
+      copyProducts.sort((a,b) => b.price - a.price)
+      containerProduct.innerHTML=''
+      console.log(copyProducts)
+      rendarcard(copyProducts) 
+     
+      default:
+        rendarcard(allproducts)
+        break;
+      }  
+      
+    }
+    
+    
+    function rendarcard(array) {
 
+      // console.log(saveArrays)
 
-}
+      let container = document.getElementById("card-container");
+      
+      // const nextBacth = array.slice(count, count + limit);
 
-
-function rendarcard() {
-  let container = document.getElementById("card-container");
-
-  const nextBacth = allproducts.slice(count, count + limit);
-
-  nextBacth.forEach((product) => {
+  array.forEach((product) => {
     const { thumbnail, title, price, id } = product;
 
     container.innerHTML += `
@@ -59,15 +67,16 @@ function rendarcard() {
         `;
   });
 
-  count += limit;
+  // count += limit;
 
-  if (count >= allproducts.length) {
-    document.getElementById("see-more-btn").style.display = "none";
-    // return;
-  }
+  // console.log(count)
+
+    // if (count >= allproducts.length) {
+    //   document.getElementById("see-more-btn").style.display = "none";
+    //   // return;
+    // }
   
 }
-
 function singleProduct(id) {
   window.location.href = `singleProduct.html?id=${id}`;
 }

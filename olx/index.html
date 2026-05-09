@@ -12,27 +12,43 @@
     <!--this div for full page block -->
     <div id="myPopup" class="overlay">
       <!-- popup cotent this overlay container in -->
-      
+
       <div class="popUp-box">
-        
         <span class="cancel-button">
-        <p onclick="closeNow()">x</p>
-          
+          <p onclick="closeNow()">x</p>
         </span>
         <form class="inputs-parent" action="">
-
           <span class="logo">
-            <h1>olx<span>.</span></h1> 
+            <h1>olx<span>.</span></h1>
           </span>
-          
-          <span class="text-of-popup"><h2>login into your OLX account</h2></span>
 
-          <input class="user-input" required placeholder=" Enter your Email" type="email" name="" id="userEmail">
-          <input class="user-input" required placeholder=" Enter your password" type="password" name="" id="userPassword">
-          <input class="login-btn" type="button" value="login" onclick="login()"> 
-          
+          <span class="text-of-popup"
+            ><h2>login into your OLX account</h2></span
+          >
+
+          <input
+            class="user-input"
+            required
+            placeholder=" Enter your Email"
+            type="email"
+            name=""
+            id="userEmail"
+          />
+          <input
+            class="user-input"
+            required
+            placeholder=" Enter your password"
+            type="password"
+            name=""
+            id="userPassword"
+          />
+          <input
+            class="login-btn"
+            type="button"
+            value="login"
+            onclick="login()"
+          />
         </form>
-        
       </div>
     </div>
 
@@ -45,7 +61,14 @@
           <li><a href="#">Categories</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <button onclick="priceTocard('true')">check price</button>
+          <li>
+            <select name="" onchange="sortByPrice(this.value)" id="">
+              <option value="">defult</option>
+              <option value="descending">high to low</option>
+              <option value="Ascending">Low to high</option>
+            </select>
+          </li>
+          <!-- <button onclick="">check price</button> -->
         </ul>
         <div class="nav-icons">
           <span class="icon">🔍</span>
@@ -70,7 +93,7 @@
       <h2 class="section-title">Trending Products</h2>
       <div id="card-container" class="product-grid"></div>
       <span class="see-btn-con">
-        <button id="see-more-btn" onclick="rendarcard()">See more</button>
+        <button id="see-more-btn" onclick="sortByPrice()">See more</button>
       </span>
     </main>
 
@@ -103,26 +126,25 @@
         <p>&copy; 2026 olx. All Rights Reserved.</p>
       </div>
     </footer>
-    
-
-
 
     <div id="loginSuccessPopup" class="success-overlay">
-    <div class="success-content">
+      <div class="success-content">
         <div class="check-container">
-            <div class="check-circle"></div>
-            <div class="check-stem"></div>
-            <div class="check-kick"></div>
+          <div class="check-circle"></div>
+          <div class="check-stem"></div>
+          <div class="check-kick"></div>
         </div>
-        
+
         <h2>Login Successful!</h2>
-        <p>Aapka account verify ho gaya hai. Dashboard par le jaya ja raha hai...</p>
-        
+        <p>
+          Aapka account verify ho gaya hai. Dashboard par le jaya ja raha hai...
+        </p>
+
         <div class="progress-loader">
-            <div class="progress-fill"></div>
+          <div class="progress-fill"></div>
         </div>
+      </div>
     </div>
-</div>
     <script src="app.js"></script>
   </body>
 </html>
